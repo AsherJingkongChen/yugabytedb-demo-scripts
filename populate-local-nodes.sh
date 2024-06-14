@@ -3,7 +3,10 @@ set -e
 # image tag is `yugabytedb/yugabyte:2.21.1.0-b271-aarch64``
 export IMAGE_SHA=848ff36bf479eec0cfe6af99b995cc2bb0dab11b0cc2d931302288a346f4f787
 
-docker rm -f yugabytedb-node1 yugabytedb-node2 yugabytedb-node3
+docker rm -f \
+    yugabytedb-node1 \
+    yugabytedb-node2 \
+    yugabytedb-node3
 
 docker network rm -f yugabytedb-network
 docker network create yugabytedb-network
