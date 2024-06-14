@@ -9,7 +9,7 @@ docker network rm -f yugabytedb-network
 docker network create yugabytedb-network
 
 docker run -d --name yugabytedb-node1 --net yugabytedb-network \
-    -p :15433 -p :5433 \
+    -p 15433:15433 -p 5433:5433 \
     --restart unless-stopped \
     $IMAGE_SHA \
     bin/yugabyted start --background=false
